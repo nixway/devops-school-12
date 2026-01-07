@@ -5,6 +5,7 @@ WORKDIR /build
 COPY ./Config.properties ./WebContent/
 RUN mvn package
 
-FROM tomcat:jre8-alpine
+FROM tomcat:8-jre8-alpine
 WORKDIR /usr/local/tomcat/webapps
 COPY --from=build /build/target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war ./App43PaaS.war
+COPY ./Config.properties ./ROOT
