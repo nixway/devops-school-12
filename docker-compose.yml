@@ -11,7 +11,7 @@ services:
     networks:
       - app42paas
   db:
-    image: mysql:lts
+    image: mysql:5.7.44
     restart: unless-stopped
     env_file: .env
     networks:
