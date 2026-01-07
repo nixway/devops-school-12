@@ -1,6 +1,5 @@
 FROM maven:3.6.3-openjdk-11 AS build
 
-RUN apt install git -y
 RUN git clone https://github.com/shephertz/App42PaaS-Java-MySQL-Sample.git /build
 WORKDIR /build
 COPY ./Config.properties ./WebContent/
