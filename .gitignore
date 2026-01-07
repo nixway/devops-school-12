@@ -13,6 +13,7 @@ group_vars/auth_data.yaml
 *.user
 *.userosscache
 *.sln.docstates
+db/
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
