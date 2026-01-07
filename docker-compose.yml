@@ -1,0 +1,23 @@
+services:
+  tomcat:
+    build: 
+      context: .
+    depends_on:
+      - db
+    restart: unless-stopped
+    ports:
+      - '8080:8080'
+      - '8443:8443'
+    networks:
+      - app42paas
+  db:
+    image: mysql:lts
+    restart: unless-stopped
+    env_file: .env
+    networks:
+      - app42paas
+    volumes:
+      - ./db:/var/lib/mysql
+      
+networks:
+  app42paas:
